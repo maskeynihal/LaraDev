@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,3 +17,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/khalti-client', function(){
+    return view('pages.khalti-client');
+});
+
+Route::post('/khalti-server', 'KhaltiPaymentController@serverValidation')->name('khalti.server.validation');
