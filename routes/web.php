@@ -16,3 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/khalti', 'KhaltiController@selectPaymentMethod');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
