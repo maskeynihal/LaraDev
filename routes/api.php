@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KhaltiFrontendController;
 use Illuminate\Http\Request;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/pin-verify', 'KhaltiFrontendController@pinVerify')->name('khalti.pinVerify');
+Route::post('/khalti-confirm-payment', 'KhaltiFrontendController@confirmPayment')->name('khalti.confirmPayment');
